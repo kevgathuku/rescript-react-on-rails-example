@@ -1,21 +1,36 @@
-FROM ruby:2.4.3
+FROM ruby:3.3.11-slim
 
-RUN \
-  curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-  && apt-get update -qq \
-  && apt-get install -y build-essential libpq-dev nodejs yarn
+# Install dependencies
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    git \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /app
+# Install Node.js 20.x
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y --no-install-recommends nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Yarn Classic
+RUN npm install -g yarn@1
+
 WORKDIR /app
 
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-RUN bundle install
+# Install gems
+COPY Gemfile Gemfile.lock ./
+RUN bundle install --jobs 4 --retry 3
 
-COPY package.json /app/package.json
-COPY yarn.lock /app/yarn.lock
-RUN yarn install
+# Install JS dependencies
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-COPY . /app
+# Copy application code
+COPY . .
+
+EXPOSE 3000
+
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
