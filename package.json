@@ -7,26 +7,28 @@
     "build": "yarn clean && rescript build"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.16.7",
     "@rescript/react": "0.10.3",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.3.1",
+    "js-yaml": "^4.1.0",
     "mini-css-extract-plugin": "^2.4.5",
     "null-loader": "^4.0.1",
     "prop-types": "^15.8.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-on-rails": "^13.4.0",
     "rescript": "9.1.4",
-    "shakapacker": "^6.6.0",
+    "rescript-react-on-rails": "^1.1.0",
+    "shakapacker": "6.6.0",
     "style-loader": "^3.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@babel/runtime": "^7.17.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "babel-loader": "^8.2.4",
@@ -36,7 +38,14 @@
     "webpack": "^5.72.0",
     "webpack-assets-manifest": "^5.0.6",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.2.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-sources": "^3.2.3"
+  },
+  "version": "0.1.0",
+  "babel": {
+    "presets": [
+      "./node_modules/shakapacker/package/babel/preset.js"
+    ]
   }
 }
