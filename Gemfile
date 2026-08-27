@@ -4,7 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.2.0'
+gem 'rails', '~> 8.0.0'
+
+# Keep Sprockets explicitly for Rails 8
+gem 'sprockets-rails'
+
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
