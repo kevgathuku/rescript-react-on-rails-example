@@ -22,7 +22,7 @@
     "react-on-rails": "^13.4.0",
     "rescript": "9.1.4",
     "rescript-react-on-rails": "^1.1.0",
-    "shakapacker": "8.4.0",
+    "shakapacker": "9.3.4",
     "style-loader": "^3.3.1"
   },
   "devDependencies": {
