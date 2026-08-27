@@ -15,9 +15,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     rm -rf /var/lib/apt/lists/*
 
+ENV BUNDLER_VERSION=4.0.19
+
 # Install Yarn Classic and Bundler
 RUN npm install -g yarn@1 && \
-    gem install bundler:4.0.19
+    gem install bundler:$BUNDLER_VERSION
 
 WORKDIR /app
 
