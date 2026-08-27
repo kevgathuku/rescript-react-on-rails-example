@@ -19,7 +19,7 @@
     "prop-types": "^15.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-on-rails": "^13.4.0",
+    "react-on-rails": "17.0.1",
     "rescript": "9.1.4",
     "rescript-react-on-rails": "^1.1.0",
     "shakapacker": "10.2.0",
