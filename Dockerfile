@@ -1,4 +1,4 @@
-FROM ruby:3.3.11-slim
+FROM ruby:3.4.6-slim
 
 # Install dependencies
 RUN apt-get update -qq && \
@@ -10,8 +10,8 @@ RUN apt-get update -qq && \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 20.x
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+# Install Node.js 22.x
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y --no-install-recommends nodejs && \
     rm -rf /var/lib/apt/lists/*
 
