@@ -1,1 +1,1 @@
-import './HelloWorldBundle.bs.js';
+import './HelloWorldBundle.res.js';

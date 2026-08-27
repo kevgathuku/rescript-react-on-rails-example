@@ -10,13 +10,14 @@
     "@rescript/react",
     "rescript-react-on-rails"
   ],
-  "reason": {
-    "react-jsx": 3
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
   },
   "bsc-flags": ["-bs-super-errors"],
-  "suffix": ".bs.js",
+  "suffix": ".res.js",
   "package-specs": {
-    "module": "es6",
+    "module": "esmodule",
     "in-source": true
   }
 }
