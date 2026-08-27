@@ -15,8 +15,8 @@ gem 'pg'
 gem 'puma', '>= 6.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'shakapacker', '9.3.4'
+# Transpile app-like JavaScript. Read more: https://github.com/shakacode/shakapacker
+gem 'shakapacker', '10.2.0'
 gem 'rack-proxy', '~> 0.7', '< 1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'

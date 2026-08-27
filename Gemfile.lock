@@ -281,7 +281,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.1.1)
-    shakapacker (9.3.4)
+    shakapacker (10.2.0)
       activesupport (>= 5.2)
       package_json
       rack-proxy (>= 0.6.1)
@@ -347,7 +347,7 @@ DEPENDENCIES
   react_on_rails (~> 14.0)
   sass-rails (>= 6)
   selenium-webdriver
-  shakapacker (= 9.3.4)
+  shakapacker (= 10.2.0)
   sprockets-rails
   tzinfo-data
   web-console (>= 4.1.0)
@@ -469,7 +469,7 @@ CHECKSUMS
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   selenium-webdriver (4.1.0) sha256=076f13aa6317fb77a27409754b58c26387d5160b9d713311c147324054a7119e
   semantic_range (3.1.1) sha256=508333196ef0c7ba33e79579d4df7eb0a41080595e6a655c2515b03d634ec4a9
-  shakapacker (9.3.4) sha256=316c508741e917390ad4462dc0c70d6ad49cc6480e1c571f48b9eae5d248ac10
+  shakapacker (10.2.0) sha256=f28bf7c1ef65727ffb288ec56bffd1f6158b5e05ac13f8e34056357273220647
   sprockets (4.4.1) sha256=fbd665edad0916de5c7abefef0fc616866a60c5e48ce2846f39ac3fc5df9e184
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73

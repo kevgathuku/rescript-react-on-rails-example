@@ -1,6 +1,7 @@
-const { webpackConfig, devServer } = require('shakapacker')
+const { generateWebpackConfig, devServer } = require('shakapacker')
 
 // See the shakacode/shakapacker README and docs directory for advice on customizing your webpackConfig.
+const webpackConfig = generateWebpackConfig()
 
 webpackConfig.module.rules.push({
   test: /\.res$/,
