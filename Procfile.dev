@@ -2,5 +2,5 @@
 # You can run these commands in separate shells
 rescript: yarn start
 rails: bundle exec rails s -p 3000
-wp-client: HMR=true bin/shakapacker-dev-server
+wp-client: RAILS_ENV=development NODE_ENV=development HMR=true bin/shakapacker-dev-server
 wp-server: HMR=true SERVER_BUNDLE_ONLY=yes bin/shakapacker --watch

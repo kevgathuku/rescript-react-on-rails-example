@@ -8,7 +8,7 @@ const baseClientWebpackConfig = generateWebpackConfig();
 
 const commonOptions = {
   resolve: {
-    extensions: ['.css', '.ts', '.tsx'],
+    extensions: ['.css', '.ts', '.tsx', '.res.js'],
   },
 };
 
