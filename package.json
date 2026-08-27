@@ -45,6 +45,7 @@
     "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.3"
   },
+  "browserslist": "defaults",
   "version": "0.1.0",
   "babel": {
     "presets": [
