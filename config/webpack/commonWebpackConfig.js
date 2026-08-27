@@ -12,9 +12,10 @@ const commonOptions = {
   },
 };
 
-// This will make webpack ignore .res files during bundle
+// This will make webpack ignore .res source files during bundle
+// Use .res$ to only match ReScript source files, not .res.js compiled output
 baseClientWebpackConfig.module.rules.push({
-  test: /\.res/,
+  test: /\.res$/,
   loader: 'null-loader',
 })
 
