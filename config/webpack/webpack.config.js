@@ -1,38 +1,15 @@
-const { generateWebpackConfig, devServer } = require('shakapacker')
+const { env, generateWebpackConfig } = require('shakapacker');
+const { existsSync } = require('fs');
+const { resolve } = require('path');
 
-// See the shakacode/shakapacker README and docs directory for advice on customizing your webpackConfig.
-const webpackConfig = generateWebpackConfig()
-
-webpackConfig.module.rules.push({
-  test: /\.res$/,
-  use: 'null-loader',
-})
-
-if (process.env.NODE_ENV === 'development') {
-  // Add react-refresh/babel plugin to babel-loader
-  const babelLoader = webpackConfig.module.rules.find(
-    (rule) => rule.use && rule.use.some((u) => u.loader && u.loader.includes('babel-loader'))
-  )
-  if (babelLoader) {
-    const loaderConfig = babelLoader.use.find(
-      (u) => u.loader && u.loader.includes('babel-loader')
-    )
-    if (loaderConfig) {
-      loaderConfig.options = loaderConfig.options || {}
-      loaderConfig.options.plugins = loaderConfig.options.plugins || []
-      loaderConfig.options.plugins.push('react-refresh/babel')
-    }
+const envSpecificConfig = () => {
+  const path = resolve(__dirname, `${env.nodeEnv}.js`);
+  if (existsSync(path)) {
+    console.log(`Loading ENV specific webpack configuration file ${path}`);
+    return require(path);
   }
 
-  // Add ReactRefreshWebpackPlugin
-  const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-  webpackConfig.plugins.push(
-    new ReactRefreshWebpackPlugin({
-      overlay: {
-        sockPort: devServer.port,
-      },
-    })
-  )
-}
+  return generateWebpackConfig();
+};
 
-module.exports = webpackConfig
+module.exports = envSpecificConfig();
